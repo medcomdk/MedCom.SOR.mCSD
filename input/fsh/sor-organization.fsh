@@ -1,4 +1,4 @@
-Profile:      SOR-Organization
+Profile:      SOROrganization
 Parent:       MCSDOrganization
 Id:           MedCom.SOR.Organization
 Title:        "SOR Organization"

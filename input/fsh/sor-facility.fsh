@@ -1,10 +1,10 @@
-Profile:      SOR-FacilityOrganization
+Profile:      SORFacilityOrganization
 Parent:       MCSDFacilityOrganization
 Id:           MedCom.SOR.FacilityOrganization
 Title:        "SOR FacilityOrganization"
 Description:  """ SOR """
 
-Profile:      SOR-FacilityLocation
+Profile:      SORFacilityLocation
 Parent:       MCSDFacilityLocation
 Id:           MedCom.SOR.FacilityLocation
 Title:        "SOR FacilityLocation"

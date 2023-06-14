@@ -1,29 +1,29 @@
 // jurisdiction pair
 
-Instance: SOR-JurisdictionOrganization-Example
-InstanceOf: SOR-JurisdictionOrganization
+Instance: SORJurisdictionOrganization-Example
+InstanceOf: SORJurisdictionOrganization
 Title: "Example SOR Jurisdiction Organization"
 Description: "Organization resource for an example SOR Jurisdiction"
 Usage: #example
-* name = "SOR-JurisdictionOrganization-Example"
+* name = "SORJurisdictionOrganization-Example"
 * active = true
-* type[jurisdiction] = SOR-OrganizationLocationTypes#jurisdiction
+* type[jurisdiction] = MCSDOrganizationLocationTypes#jurisdiction
 
-Instance: SOR-JurisdictionLocation-Example
-InstanceOf: SOR-JurisdictionLocation
+Instance: SORJurisdictionLocation-Example
+InstanceOf: SORJurisdictionLocation
 Title: "Example SOR Jurisdiction Location"
 Description: "Location resource for an example SOR Jurisdiction"
 Usage: #example
-* name = "SOR-JurisdictionLocation-Example"
+* name = "SORJurisdictionLocation-Example"
 * status = #active
-* managingOrganization = Reference(SOR-JurisdictionOrganization-Example)
+* managingOrganization = Reference(SORJurisdictionOrganization-Example)
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#jdn
-* type[jurisdiction] = SOR-OrganizationLocationTypes#jurisdiction
+* type[jurisdiction] = MCSDOrganizationLocationTypes#jurisdiction
 
 // another department
 
-Instance: SOR-Organization-ExamplePartner
-InstanceOf: SOR-Organization
+Instance: SOROrganization-ExamplePartner
+InstanceOf: SOROrganization
 Title: "Example Partner Organization"
 Description: "Example Organization for a Partner Organization"
 Usage: #example
@@ -32,69 +32,69 @@ Usage: #example
 * type[+] = http://terminology.hl7.org/CodeSystem/organization-type#govt
 
 // Hierarchy Code System Example
-CodeSystem:  SOR-ExampleHierarchy
-Id: SOR-example-hierarchy
+CodeSystem:  SORExampleHierarchy
+Id: SORexample-hierarchy
 Title: "SOR Example Hierarchy Code System"
 Description:  "An example vocabulary of hierarchies."
 * ^caseSensitive = false
 * ^content = #complete
 * ^experimental = true
-// * ^url = http://example.org/IHE/CodeSystem/sor-example-hierarchy
+// * ^url = http://example.org/IHE/CodeSystem/SORexample-hierarchy
 * #supply "Supply Chain"
 * #admin "Administrative"
 
 // facility pair which is part of a jurisdiction and has one other external org attached
 
-Instance: SOR-FacilityOrganization-Example
-InstanceOf: SOR-FacilityOrganization
+Instance: SORFacilityOrganization-Example
+InstanceOf: SORFacilityOrganization
 Title: "Example SOR Facility Organization"
 Description: "Organization resource for an example SOR Facility"
 Usage: #example
-* name = "SOR-FacilityOrganization-Example"
+* name = "SORFacilityOrganization-Example"
 * active = true
-* type[facility] = SOR-OrganizationLocationTypes#facility
-* partOf = Reference(SOR-JurisdictionOrganization-Example)
+* type[facility] = MCSDOrganizationLocationTypes#facility
+* partOf = Reference(SORJurisdictionOrganization-Example)
 
-Instance: SOR-FacilityOrganizationAffiliation-Example
-InstanceOf: SOR-OrganizationAffiliation
+Instance: SORFacilityOrganizationAffiliation-Example
+InstanceOf: SOROrganizationAffiliation
 Title: "Example SOR Facility Admin Organization Affiliation"
 Description: "Organization Affiliation resource for an example administrative relationship for a facility."
 Usage: #example
 * active = true
-* organization = Reference(SOR-Organization-ExamplePartner)
-* participatingOrganization = Reference(SOR-FacilityOrganization-Example)
-* code = SOR-ExampleHierarchy#admin
+* organization = Reference(SOROrganization-ExamplePartner)
+* participatingOrganization = Reference(SORFacilityOrganization-Example)
+* code = SORExampleHierarchy#admin
 
-Instance: SOR-FacilityLocation-Example
-InstanceOf: SOR-FacilityLocation
+Instance: SORFacilityLocation-Example
+InstanceOf: SORFacilityLocation
 Title: "Example SOR Facility Location"
 Description: "Location resource for an example SOR Facility"
 Usage: #example
-* name = "SOR-FacilityLocation-Example"
+* name = "SORFacilityLocation-Example"
 * status = #active
-* managingOrganization = Reference(SOR-FacilityOrganization-Example)
-* partOf = Reference(SOR-JurisdictionLocation-Example)
+* managingOrganization = Reference(SORFacilityOrganization-Example)
+* partOf = Reference(SORJurisdictionLocation-Example)
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bu
-* type[facility] = SOR-OrganizationLocationTypes#facility
+* type[facility] = MCSDOrganizationLocationTypes#facility
 * type[service] = http://terminology.hl7.org/CodeSystem/v3-RoleCode#HOSP
 
-Instance: SOR-Location-Example
-InstanceOf: SOR-Location
+Instance: SORLocation-Example
+InstanceOf: SORLocation
 Title: "Example SOR Location"
 Description: "Location resource for an example of an SOR Location (Ward)"
 Usage: #example
-* name = "SOR-Location-Example"
+* name = "SORLocation-Example"
 * status = #active
-* partOf = Reference(SOR-FacilityLocation-Example)
+* partOf = Reference(SORFacilityLocation-Example)
 * type[+] = http://terminology.hl7.org/CodeSystem/v3-RoleCode#RNEU
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#wa
 
-Instance: SOR-LocationDistance-Example
-InstanceOf: SOR-LocationDistance
+Instance: SORLocationDistance-Example
+InstanceOf: SORLocationDistance
 Title: "Example SOR Location with Distance Option"
 Description: "Location resource for an example of an SOR Location with Distance Option"
 Usage: #example
-* name = "SOR-LocationDistance-Example"
+* name = "SORLocationDistance-Example"
 * status = #active
 * type[+] = http://terminology.hl7.org/CodeSystem/v3-RoleCode#HOSP
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bu
@@ -103,28 +103,28 @@ Usage: #example
 
 // service, role, practitioner
 
-Instance: SOR-HealthcareService-Example
-InstanceOf: SOR-HealthcareService
+Instance: SORHealthcareService-Example
+InstanceOf: SORHealthcareService
 Title: "Example SOR HealthcareService"
 Description: "HealthcareService resource example for SOR."
 Usage: #example
 * name = "ANC"
 * type = http://terminology.hl7.org/CodeSystem/service-type#124 "General Practice"
-* location = Reference(SOR-FacilityLocation-Example)
+* location = Reference(SORFacilityLocation-Example)
 
-Instance: SOR-PractitionerRole-Example
-InstanceOf: SOR-PractitionerRole
+Instance: SORPractitionerRole-Example
+InstanceOf: SORPractitionerRole
 Title: "Example SOR PractitionerRole"
 Description: "PractitionerRole resource example for SOR."
 Usage: #example
 * code = http://terminology.hl7.org/CodeSystem/practitioner-role#nurse
-* location = Reference(SOR-FacilityLocation-Example)
-* healthcareService = Reference(SOR-HealthcareService-Example)
-* organization = Reference(SOR-FacilityOrganization-Example)
-* practitioner = Reference(SOR-Practitioner-Example)
+* location = Reference(SORFacilityLocation-Example)
+* healthcareService = Reference(SORHealthcareService-Example)
+* organization = Reference(SORFacilityOrganization-Example)
+* practitioner = Reference(SORPractitioner-Example)
 
-Instance: SOR-Practitioner-Example
-InstanceOf: SOR-Practitioner
+Instance: SORPractitioner-Example
+InstanceOf: SORPractitioner
 Title: "Example SOR Practitioner"
 Description: "Practitioner resource example for SOR."
 Usage: #example
@@ -140,45 +140,45 @@ Usage: #example
 * type = #transaction
 
 
-* entry[+].fullUrl = "http://www.example.org/fhir/Organization/SOR-JurisdictionOrganization-Example"
-* entry[=].request.url = "Organization/SOR-JurisdictionOrganization-Example"
+* entry[+].fullUrl = "http://www.example.org/fhir/Organization/SORJurisdictionOrganization-Example"
+* entry[=].request.url = "Organization/SORJurisdictionOrganization-Example"
 * entry[=].request.method = #PUT
-* entry[=].resource = SOR-JurisdictionOrganization-Example
+* entry[=].resource = SORJurisdictionOrganization-Example
 
-* entry[+].fullUrl = "http://www.example.org/fhir/Location/SOR-JurisdictionLocation-Example"
-* entry[=].request.url = "Location/SOR-JurisdictionLocation-Example"
+* entry[+].fullUrl = "http://www.example.org/fhir/Location/SORJurisdictionLocation-Example"
+* entry[=].request.url = "Location/SORJurisdictionLocation-Example"
 * entry[=].request.method = #PUT
-* entry[=].resource = SOR-JurisdictionLocation-Example
+* entry[=].resource = SORJurisdictionLocation-Example
 
-* entry[+].fullUrl = "http://www.example.org/fhir/Organization/SOR-Organization-ExamplePartner"
-* entry[=].request.url = "Organization/SOR-Organization-ExamplePartner"
+* entry[+].fullUrl = "http://www.example.org/fhir/Organization/SOROrganization-ExamplePartner"
+* entry[=].request.url = "Organization/SOROrganization-ExamplePartner"
 * entry[=].request.method = #PUT
-* entry[=].resource = SOR-Organization-ExamplePartner
+* entry[=].resource = SOROrganization-ExamplePartner
 
-* entry[+].fullUrl = "http://www.example.org/fhir/Organization/SOR-FacilityOrganization-Example"
-* entry[=].request.url = "Organization/SOR-FacilityOrganization-Example"
+* entry[+].fullUrl = "http://www.example.org/fhir/Organization/SORFacilityOrganization-Example"
+* entry[=].request.url = "Organization/SORFacilityOrganization-Example"
 * entry[=].request.method = #PUT
-* entry[=].resource = SOR-FacilityOrganization-Example
+* entry[=].resource = SORFacilityOrganization-Example
 
-* entry[+].fullUrl = "http://www.example.org/fhir/Location/SOR-FacilityLocation-Example"
-* entry[=].request.url = "Location/SOR-FacilityLocation-Example"
+* entry[+].fullUrl = "http://www.example.org/fhir/Location/SORFacilityLocation-Example"
+* entry[=].request.url = "Location/SORFacilityLocation-Example"
 * entry[=].request.method = #PUT
-* entry[=].resource = SOR-FacilityLocation-Example
+* entry[=].resource = SORFacilityLocation-Example
 
-* entry[+].fullUrl = "http://www.example.org/fhir/HealthcareService/SOR-HealthcareService-Example"
-* entry[=].request.url = "HealthcareService/SOR-HealthcareService-Example"
+* entry[+].fullUrl = "http://www.example.org/fhir/HealthcareService/SORHealthcareService-Example"
+* entry[=].request.url = "HealthcareService/SORHealthcareService-Example"
 * entry[=].request.method = #PUT
-* entry[=].resource = SOR-HealthcareService-Example
+* entry[=].resource = SORHealthcareService-Example
 
-* entry[+].fullUrl = "http://www.example.org/fhir/PractitionerRole/SOR-PractitionerRole-Example"
-* entry[=].request.url = "PractitionerRole/SOR-PractitionerRole-Example"
+* entry[+].fullUrl = "http://www.example.org/fhir/PractitionerRole/SORPractitionerRole-Example"
+* entry[=].request.url = "PractitionerRole/SORPractitionerRole-Example"
 * entry[=].request.method = #PUT
-* entry[=].resource = SOR-PractitionerRole-Example
+* entry[=].resource = SORPractitionerRole-Example
 
-* entry[+].fullUrl = "http://www.example.org/fhir/Practitioner/SOR-Practitioner-Example"
-* entry[=].request.url = "Practitioner/SOR-Practitioner-Example"
+* entry[+].fullUrl = "http://www.example.org/fhir/Practitioner/SORPractitioner-Example"
+* entry[=].request.url = "Practitioner/SORPractitioner-Example"
 * entry[=].request.method = #PUT
-* entry[=].resource = SOR-Practitioner-Example
+* entry[=].resource = SORPractitioner-Example
 
 * entry[+].fullUrl = "http://www.example.org/fhir/OrganizationAffiliation/ex-OrgAff"
 * entry[=].request.url = "OrganizationAffiliation/ex-OrgAff"
