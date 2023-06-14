@@ -17,10 +17,10 @@ Profile:      SOREndpointDocShare
 Parent:       MCSDEndpointDocShare
 Id:           medcom.sor.Endpoint.DocShare
 Title:        "MedCom SOR DocShare Endpoint"
-Description:  ""
+Description:  """ SOR """
 
 Profile:      SOREndpointMessaging
 Parent:       SOREndpoint
 Id:           medcom.sor.Endpoint.Messaging
 Title:        "MedCom SOR Messaging Endpoint"
-Description:  ""
+Description:  """ SOR """
