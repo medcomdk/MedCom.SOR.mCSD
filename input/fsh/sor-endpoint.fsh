@@ -12,3 +12,15 @@ reachable via an Endpoint at its parent Organization or an affiliated Organizati
 
 Given that in FHIR R4 the .connnectionType is 1..1, each type of endpoint will be indicated with an independent Endpoint resource.
 """
+
+Profile:      SOREndpointDocShare
+Parent:       MCSDEndpointDocShare
+Id:           medcom.sor.Endpoint.DocShare
+Title:        "MedCom SOR DocShare Endpoint"
+Description:  ""
+
+Profile:      SOREndpointMessaging
+Parent:       SOREndpoint
+Id:           medcom.sor.Endpoint.Messaging
+Title:        "MedCom SOR Messaging Endpoint"
+Description:  ""
