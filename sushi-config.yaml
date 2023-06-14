@@ -49,19 +49,19 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
 
 pages:
   index.md:
-    title: Mobile Care Services Discovery (mCSD)
+    title: MedCom SOR Services Discovery (mCSD)
     generation: markdown
   volume-1.md:
-    title: 1:46 Mobile Care Services Discovery (mCSD)
+    title: 1:46 MedCom SOR Services Discovery (mCSD)
     generation: markdown
   sor-volume-1.md:
     title: 1:46 SOR mapped as (mCSD)
     generation: markdown
   ITI-90.md:
-    title: 2:3.90 Find Matching Care Services [ITI-90]
+    title: 2:3.90 Find Matching SOR Services [ITI-90]
     generation: markdown
   ITI-91.md:
-    title: 2:3.91 Request Care Services Updates [ITI-91]
+    title: 2:3.91 Request SOR Services Updates [ITI-91]
     generation: markdown
   testplan.md:
     title: mCSD Test Plan
